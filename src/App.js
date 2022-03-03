@@ -1,9 +1,13 @@
+import { useState } from "react";
+
 function App() {
-  let likeCounter = 0;
+  let [likeCounter, setLikeCounter] = useState(0);
 
   let likeMe = () => {
-    likeCounter++;
-    console.log(likeCounter);
+    let newLikeCounter = likeCounter + 1;
+    setLikeCounter(newLikeCounter);
+
+    console.log(newLikeCounter);
   };
 
   return (
