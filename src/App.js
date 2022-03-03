@@ -1,25 +1,28 @@
 import { useState } from "react";
 
-function App() {
-  // let list = useState(0);
-  // let [likeCounter, setLikeCounter] = list;
+export default function App() {
+  let [username, setUsername] = useState("Rohit");
+  let [follower, setFollower] = useState(10);
 
-  // let likeCounter = 0;
-  let [likeCounter, setLikeCounter] = useState(0); // ES6
+  let handleFollower = () => {
+    let newFollowercount = follower + 10;
+    // UPdate the UI with new Value.
+    setFollower(newFollowercount);
+  };
 
-  let likeMe = () => {
-    let newCounter = likeCounter + 1;
-
-    // Asking the REACT TO UPDAT THE STATE / UI
-    setLikeCounter(newCounter);
+  let updateUsername = () => {
+    let newUsername = username + " Sharmmaa";
+    setUsername(newUsername);
   };
 
   return (
     <div>
-      <h1>{likeCounter}</h1>
-      <input type="button" value="Like Me" onClick={likeMe} />
+      <h1>
+        {username} has {follower} followers
+      </h1>
+
+      <input type="button" value="Update FOLLOWERS" onClick={handleFollower} />
+      <input type="button" value="UPDATE USERNAME" onClick={updateUsername} />
     </div>
   );
 }
-
-export default App;
