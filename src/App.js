@@ -9,11 +9,16 @@ export default function App() {
 
   return (
     <div>
-      <h1>Lets Tweet</h1>
-      <input type="button" value="Add new Tweet" onClick={addNewCity} />
+      <h1 className="bg-dark text-light p-3">Lets Tweet</h1>
+      <input
+        className="btn btn-secondary btn-lg w-100"
+        type="button"
+        value="Add new Tweet"
+        onClick={addNewCity}
+      />
 
       {cityList.map((item) => (
-        <div>{item}</div>
+        <div className="alert alert-secondary">{item}</div>
       ))}
     </div>
   );
